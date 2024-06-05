@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.corner {
+  border-radius: 8px;
+}
+.circle {
+  border-radius: 50%;
+}
+
+.messages {
+  height: calc(100% - 120px);
+}
+.messageP {
+  border-radius: 0px 10px 10px 10px;
+}
+.owner {
+  border-radius: 10px 0px 10px 10px;
+}
