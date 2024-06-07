@@ -1,10 +1,10 @@
+import useUserProgress from "../Hooks/useUserProgress";
 import db from "../db/drizzle";
 import { getCourseById, getUserProgress } from "../db/quaries";
 import { challengeProgress, challenges, userProgress } from "../db/schema";
 import { and, eq } from "drizzle-orm";
 
-export const upsertUserProgress = async (courseId: number, userId:string, user ) => {
-    console.log("user",user)
+export const upsertUserProgress = async (courseId: number, userId:string, user:object ) => {
   if (!userId || !user) {
     throw new Error("Unauthorized");
   }
@@ -27,7 +27,7 @@ export const upsertUserProgress = async (courseId: number, userId:string, user )
     await db.update(userProgress).set({
       activeCourseId: courseId,
       userName: user.firstName || "User",
-      userImageSrc: user.imageUrl || "/mascot.svg",
+      userImageSrc: user.imageUrl || "https://i.ibb.co/fS2ksRY/mascot.png",
     });
   }
 
@@ -35,7 +35,7 @@ export const upsertUserProgress = async (courseId: number, userId:string, user )
     userId,
     activeCourseId: courseId,
     userName: user.firstName || "User",
-    userImageSrc: user.imageUrl || "/mascot.svg",
+    userImageSrc: user.imageUrl || "https://i.ibb.co/fS2ksRY/mascot.png",
   });
 };
 
@@ -87,4 +87,29 @@ export const reduceHearts = async (challengeId: number, userId) => {
   await db.update(userProgress).set({
     hearts: Math.max(currentUserProgress.hearts - 1, 0),
   }).where(eq(userProgress.userId, userId));
+};
+
+
+
+export const refillHearts = async (userId) => {
+  
+  const POINTS_TO_REFILL = 10
+  const currentUserProgress = await getUserProgress(userId);
+
+  if (!currentUserProgress) {
+    throw new Error("User progress not found");
+  }
+
+  if (currentUserProgress.hearts === 5) {
+    throw new Error("Hearts are already full");
+  }
+
+  if (currentUserProgress.points < POINTS_TO_REFILL) {
+    throw new Error("Not enough points");
+  }
+
+  await db.update(userProgress).set({
+    hearts: 5,
+    points: currentUserProgress.points - POINTS_TO_REFILL,
+  }).where(eq(userProgress.userId, currentUserProgress.userId));
 };

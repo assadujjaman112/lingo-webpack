@@ -6,11 +6,11 @@ module.exports = {
   entry: "./src/main.tsx",
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "main"),
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, "dist"),
+      directory: path.join(__dirname, "main"),
     },
     compress: true,
     hot: true,

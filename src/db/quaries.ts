@@ -1,6 +1,7 @@
 import db from "../db/drizzle";
 import { eq } from "drizzle-orm";
-import { challengeProgress, courses, lessons, units, userProgress } from "../db/schema";
+import { challengeProgress, courses, lessons, units, userProgress, userSubscription} from "../db/schema";
+import { useAuth } from "@clerk/clerk-react";
 export const getUserProgress = async (userId: string) => {
   if (!userId) {
     return null;
@@ -187,4 +188,46 @@ export const getLessonPercentage = async (userId:string) => {
   );
 
   return percentage;
+};
+
+
+const DAY_IN_MS = 86_400_000;
+export const getUserSubscription = async (userId : string) => {
+
+  if (!userId) return null;
+
+  const data = await db.query.userSubscription.findFirst({
+    where: eq(userSubscription.userId, userId),
+  });
+
+  if (!data) return null;
+
+  const isActive = 
+    data.stripePriceId &&
+    data.stripeCurrentPeriodEnd?.getTime()! + DAY_IN_MS > Date.now();
+
+  return {
+    ...data,
+    isActive: !!isActive,
+  };
+};
+
+export const getTopTenUsers = async (userId: string) => {
+
+  if (!userId) {
+    return [];
+  }
+
+  const data = await db.query.userProgress.findMany({
+    orderBy: (userProgress, { desc }) => [desc(userProgress.points)],
+    limit: 10,
+    columns: {
+      userId: true,
+      userName: true,
+      userImageSrc: true,
+      points: true,
+    },
+  });
+
+  return data;
 };

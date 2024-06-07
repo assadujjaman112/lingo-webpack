@@ -8,7 +8,7 @@ import { ChatContextProvider } from "./providers/ChatContext";
 import router from "./Routes/router";
 
 const PUBLISHABLE_KEY = "pk_test_bmF0aW9uYWwtYWtpdGEtNDguY2xlcmsuYWNjb3VudHMuZGV2JA";
-console.log(PUBLISHABLE_KEY);
+
 
 if (!PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key");

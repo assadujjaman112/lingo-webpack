@@ -28,12 +28,12 @@ export const ExitModal = () => {
       <DialogContent className="max-w-md">
         <DialogHeader>
           <div className="flex items-center w-full justify-center mb-5">
-            <img src="/mascot_sad.svg" alt="Mascot" height={80} width={80} />
+            <img src="https://i.ibb.co/hg4BMpY/mascot-sad.png" alt="Mascot" height={80} width={80} />
           </div>
-          <DialogTitle className="text-center font-bold text-2xl">
+          <DialogTitle className="text-center font-bold text-2xl text-white">
             Wait, don&apos;t go!
           </DialogTitle>
-          <DialogDescription className="text-center text-base">
+          <DialogDescription className="text-center text-white">
             You&apos;re about to leave the lesson. Are you sure?
           </DialogDescription>
         </DialogHeader>

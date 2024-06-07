@@ -25,22 +25,22 @@
 //       {
 //         id: 1,
 //         title: "Spanish",
-//         imageSrc: "/es.svg",
+//         imageSrc: "https://i.ibb.co/qrjR0tt/es.png",
 //       },
 //       {
 //         id: 2,
 //         title: "Italian",
-//         imageSrc: "/it.svg",
+//         imageSrc: "https://i.ibb.co/pPGVpq4/it.png",
 //       },
 //       {
 //         id: 3,
 //         title: "French",
-//         imageSrc: "/fr.svg",
+//         imageSrc: "https://i.ibb.co/GM8dx4f/fr.png",
 //       },
 //       {
 //         id: 4,
 //         title: "Croatian",
-//         imageSrc: "/hr.svg",
+//         imageSrc: "https://i.ibb.co/MSgbsTq/hr.png",
 //       },
 //     ]);
 
@@ -114,21 +114,21 @@
 //     await db.insert(schema.challengeOptions).values([
 //       {
 //         challengeId: 1, // Which one of these is "the man"?
-//         imageSrc: "/man.svg",
+//         imageSrc: "https://i.ibb.co/zFcPk5T/man.png",
 //         correct: true,
 //         text: "el hombre",
 //         audioSrc: "/es_man.mp3",
 //       },
 //       {
 //         challengeId: 1,
-//         imageSrc: "/woman.svg",
+//         imageSrc: "https://i.ibb.co/d5g21qt/woman.png",
 //         correct: false,
 //         text: "la mujer",
 //         audioSrc: "/es_woman.mp3",
 //       },
 //       {
 //         challengeId: 1,
-//         imageSrc: "/robot.svg",
+//         imageSrc: "https://i.ibb.co/grPZfWx/robot.png",
 //         correct: false,
 //         text: "el robot",
 //         audioSrc: "/es_robot.mp3",
@@ -172,22 +172,22 @@ const main = async () => {
       {
         id: 1,
         title: "Spanish",
-        imageSrc: "/es.svg",
+        imageSrc: "https://i.ibb.co/qrjR0tt/es.png",
       },
       {
         id: 2,
         title: "Italian",
-        imageSrc: "/it.svg",
+        imageSrc: "https://i.ibb.co/pPGVpq4/it.png",
       },
       {
         id: 3,
         title: "French",
-        imageSrc: "/fr.svg",
+        imageSrc: "https://i.ibb.co/GM8dx4f/fr.png",
       },
       {
         id: 4,
         title: "Croatian",
-        imageSrc: "/hr.svg",
+        imageSrc: "https://i.ibb.co/MSgbsTq/hr.png",
       },
     ]);
 
@@ -261,21 +261,21 @@ const main = async () => {
     await db.insert(schema.challengeOptions).values([
       {
         challengeId: 1, // Which one of these is "the man"?
-        imageSrc: "/man.svg",
+        imageSrc: "https://i.ibb.co/zFcPk5T/man.png",
         correct: true,
         text: "el hombre",
         audioSrc: "/es_man.mp3",
       },
       {
         challengeId: 1,
-        imageSrc: "/woman.svg",
+        imageSrc: "https://i.ibb.co/d5g21qt/woman.png",
         correct: false,
         text: "la mujer",
         audioSrc: "/es_woman.mp3",
       },
       {
         challengeId: 1,
-        imageSrc: "/robot.svg",
+        imageSrc: "https://i.ibb.co/grPZfWx/robot.png",
         correct: false,
         text: "el robot",
         audioSrc: "/es_robot.mp3",
@@ -306,21 +306,21 @@ const main = async () => {
     await db.insert(schema.challengeOptions).values([
       {
         challengeId: 3, // Which one of these is the "the robot"?
-        imageSrc: "/man.svg",
+        imageSrc: "https://i.ibb.co/zFcPk5T/man.png",
         correct: false,
         text: "el hombre",
         audioSrc: "/es_man.mp3",
       },
       {
         challengeId: 3,
-        imageSrc: "/woman.svg",
+        imageSrc: "https://i.ibb.co/d5g21qt/woman.png",
         correct: false,
         text: "la mujer",
         audioSrc: "/es_woman.mp3",
       },
       {
         challengeId: 3,
-        imageSrc: "/robot.svg",
+        imageSrc: "https://i.ibb.co/grPZfWx/robot.png",
         correct: true,
         text: "el robot",
         audioSrc: "/es_robot.mp3",

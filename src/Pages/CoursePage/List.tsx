@@ -1,7 +1,7 @@
 import { courses, userProgress } from "../../db/schema";
 import { Card } from "./Card";
-import { useNavigate } from "react-router-dom";
-import { useTransition } from "react";
+import {  redirect, useNavigate } from "react-router-dom";
+import React, { useTransition } from "react";
 import { upsertUserProgress } from "../../actions/user-progress";
 import { useAuth, useUser } from "@clerk/clerk-react";
 import { toast } from "sonner";
@@ -18,9 +18,10 @@ export const List = ({ courses, activeCourseId }: Props) => {
   const user = useUser();
 
   const onClick = (id: number) => {
+    console.log("clicked to course", id,userId, );
     if (pending) return;
     if (id === activeCourseId) {
-      navigate("/main/learn");
+      redirect("/main/learn");
     }
     startTransition(() => {
       upsertUserProgress(id, userId, user).catch(() =>

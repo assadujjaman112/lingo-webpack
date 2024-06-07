@@ -1,5 +1,4 @@
 import { Loader } from "lucide-react";
-// import { Button } from "../components/ui/button";
 import {
   ClerkLoaded,
   ClerkLoading,
@@ -7,11 +6,6 @@ import {
   SignedIn,
   SignedOut,
   UserButton,
-  // ClerkLoaded,
-  // SignedIn,
-  // SignedOut,
-  // SignInButton,
-  // UserButton,
 } from "@clerk/clerk-react";
 import { Button } from "../components/ui/button";
 import { Link } from "react-router-dom";

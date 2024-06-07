@@ -156,14 +156,14 @@ const Quiz = ({
         />
         <div className="flex flex-col gap-y-4 lg:gap-y-8 max-w-lg mx-auto text-center items-center justify-center h-full">
           <img
-            src="/finish.svg"
+            src="https://i.ibb.co/r0thzS3/finish.png"
             alt="Finish"
             className="hidden lg:block"
             height={100}
             width={100}
           />
           <img
-            src="/finish.svg"
+            src="https://i.ibb.co/r0thzS3/finish.png"
             alt="Finish"
             className="block lg:hidden"
             height={50}

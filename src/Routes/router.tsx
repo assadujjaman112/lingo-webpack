@@ -10,6 +10,9 @@ import Register from "../Pages/Register/Register";
 import MessagePage from "../Pages/messegePage/MessagePage";
 import { createBrowserRouter } from "react-router-dom";
 import React from "react"
+import ShopPage from "../Pages/Shop/ShopPage";
+import LeaderBoardPage from "../Pages/LeaderBoard/LeaderBoard";
+import QuestsPage from "../Pages/Quest/Quest";
 
 const router = createBrowserRouter([
   {
@@ -36,15 +39,20 @@ const router = createBrowserRouter([
       },
       {
         path: "leaderBoard",
-        element: <LearnPage />,
+        element: <LeaderBoardPage />,
       },
       {
         path: "courses",
         element: <CoursePage />,
       },
       {
-        path: "store",
+        path: "shop",
+        element : <ShopPage />
       },
+      {
+        path:"quests",
+        element : <QuestsPage />
+      }
     ],
   },
   {
